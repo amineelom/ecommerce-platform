@@ -1,10 +1,14 @@
 {
   "name": "ecommerce-platform",
   "version": "1.0.0",
-  "description": "coming sooon",
+  "description": "Full-Stack E-Commerce Platform with React frontend and Node.js backend",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "node server/server.js",
+    "start": "concurrently \"npm run server\" \"npm run dev\""
   },
   "repository": {
     "type": "git",
@@ -35,8 +39,10 @@
     "@babel/core": "^7.28.5",
     "@babel/preset-env": "^7.28.5",
     "@babel/preset-react": "^7.28.5",
+    "@vitejs/plugin-react": "^5.1.0",
     "babel-loader": "^10.0.0",
     "nodemon": "^3.1.10",
+    "vite": "^7.1.12",
     "webpack": "^5.102.1",
     "webpack-cli": "^6.0.1"
   }
