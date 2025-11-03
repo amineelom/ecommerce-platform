@@ -30,6 +30,9 @@ const Navigation = () => {
           <Link to="/cart" className="navbar-link">
             🛒 Cart
           </Link>
+          <Link to="/wishlist" className="navbar-link">
+            ❤️ Wishlist
+          </Link>
 
           {user ? (
             <>

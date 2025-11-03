@@ -26,9 +26,9 @@ const ProductCard = ({ product }) => {
     : 0;
 
   return (
-    <div className="product-card">
-      <div className="product-image-container">
-        <img src={product.image} alt={product.name} className="product-image" />
+    <div className="product-card" onClick={() => window.location.href = `/products/${product._id}`}>
+      <div className="product-image-container" style={{ cursor: 'pointer' }}>
+        <img src={product.image} alt={product.name} className="product-image" style={{ cursor: 'pointer' }} />
         {discount > 0 && <div className="discount-badge">{discount}% OFF</div>}
       </div>
       <div className="product-info">

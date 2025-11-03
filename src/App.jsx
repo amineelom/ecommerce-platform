@@ -12,6 +12,8 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
 import AdminDashboard from './pages/AdminDashboard';
+import ProductDetails from './pages/ProductDetails';
+import Wishlist from './pages/Wishlist';
 import './App.css';
 
 function App() {
@@ -37,6 +39,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/products/:id" element={<ProductDetails />} />
+        <Route path="/wishlist" element={<Wishlist />} />
       </Routes>
     </Router>
   );
