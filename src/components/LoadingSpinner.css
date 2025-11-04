@@ -1,0 +1,120 @@
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.spinner {
+  display: inline-block;
+  position: relative;
+}
+
+.spinner div {
+  position: absolute;
+  border: 4px solid #667eea;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.spinner div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+
+.spinner div:nth-child(3) {
+  animation-delay: -1s;
+}
+
+.spinner div:nth-child(4) {
+  animation-delay: -1.5s;
+}
+
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
+/* Size variations */
+.spinner-small {
+  width: 40px;
+  height: 40px;
+}
+
+.spinner-small div {
+  border-width: 2px;
+}
+
+@keyframes lds-ripple-small {
+  0% {
+    top: 18px;
+    left: 18px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 36px;
+    height: 36px;
+    opacity: 0;
+  }
+}
+
+.spinner-small div {
+  animation: lds-ripple-small 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.spinner-medium {
+  width: 72px;
+  height: 72px;
+}
+
+.spinner-large {
+  width: 120px;
+  height: 120px;
+}
+
+.spinner-large div {
+  border-width: 6px;
+}
+
+@keyframes lds-ripple-large {
+  0% {
+    top: 60px;
+    left: 60px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 120px;
+    height: 120px;
+    opacity: 0;
+  }
+}
+
+.spinner-large div {
+  animation: lds-ripple-large 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
