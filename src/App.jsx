@@ -26,7 +26,7 @@ function App() {
   }, [token]);
 
   return (
-    <Router>
+    <Router basename="/ecommerce-platform">
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
