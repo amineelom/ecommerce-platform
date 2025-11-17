@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { useAuthStore } from './store/authStore';
 import Navigation from './components/Navigation';
 import Home from './pages/Home';
@@ -26,7 +26,7 @@ function App() {
   }, [token]);
 
   return (
-    <Router basename="/ecommerce-platform">
+    <Router>
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
