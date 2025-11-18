@@ -2,14 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/ecommerce-platform/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Full-Stack E-Commerce Platform - Shop amazing products at unbeatable prices" />
-    <meta name="theme-color" content="#667eea" />
     <title>E-Commerce Platform | Shop Now</title>
     <script>
       // Redirect all 404s to index.html for client-side routing
-      sessionStorage.redirect = location.href;
+      // This script runs before the page loads
+      if (sessionStorage.redirect) {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        window.history.replaceState(null, null, redirect);
+      }
     </script>
   </head>
   <body>

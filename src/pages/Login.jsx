@@ -9,8 +9,17 @@ const Login = () => {
     password: '',
   });
   const [error, setError] = useState('');
-  const { login, loading } = useAuthStore();
+  const { login, loading, setDemoMode } = useAuthStore();
   const navigate = useNavigate();
+
+  const handleDemoLogin = async () => {
+    try {
+      await setDemoMode(true);
+      navigate('/');
+    } catch (err) {
+      setError('Demo mode failed');
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -84,6 +93,19 @@ const Login = () => {
               Register here
             </Link>
           </p>
+
+          <div className="demo-section">
+            <p className="demo-label">Try Demo Mode</p>
+            <button 
+              type="button" 
+              className="demo-btn" 
+              onClick={handleDemoLogin}
+              disabled={loading}
+            >
+              {loading ? 'Loading...' : 'Enter Demo Mode'}
+            </button>
+            <p className="demo-info">Test the platform without creating an account</p>
+          </div>
         </div>
       </div>
     </div>
