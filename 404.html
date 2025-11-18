@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Commerce Platform | Shop Now</title>
+    <script>
+      // Redirect all 404s to index.html for client-side routing
+      // This script runs before the page loads
+      if (sessionStorage.redirect) {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        window.history.replaceState(null, null, redirect);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/ecommerce-platform/src/main.jsx"></script>
+  </body>
+</html>
